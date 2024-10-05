@@ -9,8 +9,8 @@ app = FastAPI(
 def get_root():
     return {"message": "Welcome to my API! For more information, visit /docs."}
 
-@app.get("/v1/joke")
-def zitat(language: str = None):
+@app.get("/v1/joke", description="Get a random joke")
+def joke(language: str = None):
     jokes = {
         "de": ["Wissenschaftler haben herausgefunden... - und sind wieder hineingenangen.",
                "Egal wie gut du fährst, Züge fahren Güter.",

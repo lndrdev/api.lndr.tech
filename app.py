@@ -26,6 +26,6 @@ def joke(language: str = None):
     joke = random.choice(jokes.get(language if language else "de", jokes["de"]))
     return {"joke": joke}
 
-@app.get("v1/uuid")
+@app.get("/v1/uuid")
 def uuid():
     return {"uuid": uuid.uuid64()}
